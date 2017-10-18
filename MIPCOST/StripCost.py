@@ -49,7 +49,8 @@ class Strip:
 		counter = 0
 		for solution in (self.Prunelst):
 			counter+=1
-			print('Percent Complete:\t',counter/len(self.Prunelst)*100,'%')
+			if counter %100 == 0:
+			    print('Percent Complete:\t',counter/len(self.Prunelst)*100,'%')
 			for Block in range(len(solution)):
 				position = sum([solution[i] for i in range(Block)])-solution[Block]
 				combo = ''

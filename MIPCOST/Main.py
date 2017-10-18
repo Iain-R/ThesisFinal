@@ -4,10 +4,10 @@ from random import *
 import matplotlib.pyplot as plt
 from MIPBlock import Block
 from StripCost import Strip
-import Preproccesing as Preproccesing
 import numpy as np 
-# from tqdm import tqdm 
+import time as time
 import gurobipy as G
+import Preproccesing as PrePro
 Drag = Dragline(15, 30, 45, 10, 15, 30)
 
 
@@ -41,11 +41,17 @@ Spoil = BlankSpoil(100)
 STR = Strip(Mine, Spoil, Drag)
 STR.BlockSettings(98,1.3,1.9)
 # STR.printRange()
+Starttime = time.time()
+#STR.DP(0,100, Spoil)
 STR.PrunedCost()
 STR.getPrunedResults()
-STR.GetDict
-# STR.DP(0,100, Spoil)
+STR.SavePruneDict()
+
+DPTime = time.time()-Starttime
+
+with open('Runtime.txt','w') as file:
+	file.write('Time Taken for Prune:{}'.format(DPTime))
 # STR.GetDict()
-# STR.SaveDict('Run_99.txt')
+#STR.SaveDict('Run_99.txt')
 # A = {1:'one',2:'Two'}
 # json.dump(A, open('filename.txt','w'))

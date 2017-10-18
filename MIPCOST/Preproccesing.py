@@ -54,9 +54,9 @@ class PrePro:
 		self.Makelists()
 		return(self.Prunedlst)
 
-A  = PrePro(0, 100, 15, 30)
-Llll = A.Prune()
-print(len(Llll))
+# A  = PrePro(0, 100, 15, 30)
+# Llll = A.Prune()
+# print(len(Llll))
 
 
 
