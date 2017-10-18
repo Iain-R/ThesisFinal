@@ -99,9 +99,9 @@ class Block:
 
 
 	def BlockCost(self,start,end,Spoil,output=0):
-		if end>len(Spoil):
-			end = len(Spoil)
-			print("Adjusting End Position")
+		if end>len(self.Mine):
+			end = len(self.Mine)
+			# print("Adjusting End Position")
 		self.set_Spoil(Spoil)
 		if output ==1:
 			print("Spoil Set")

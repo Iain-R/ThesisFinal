@@ -4,9 +4,11 @@ from random import *
 import matplotlib.pyplot as plt
 from MIPBlock import Block
 from StripCost import Strip
+import Preproccesing as Preproccesing
 import numpy as np 
+# from tqdm import tqdm 
 import gurobipy as G
-Drag = Dragline(15, 30, 45, 10, 10, 30)
+Drag = Dragline(15, 30, 45, 10, 15, 30)
 
 
 
@@ -38,9 +40,12 @@ Spoil = BlankSpoil(100)
 
 STR = Strip(Mine, Spoil, Drag)
 STR.BlockSettings(98,1.3,1.9)
-STR.printRange()
-STR.DP(0,100, Spoil)
-STR.GetDict()
-STR.SaveDict('Run_99.txt')
+# STR.printRange()
+STR.PrunedCost()
+STR.getPrunedResults()
+STR.GetDict
+# STR.DP(0,100, Spoil)
+# STR.GetDict()
+# STR.SaveDict('Run_99.txt')
 # A = {1:'one',2:'Two'}
 # json.dump(A, open('filename.txt','w'))
