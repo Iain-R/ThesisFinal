@@ -16,8 +16,8 @@
 	# return 0
 # GenBranch(0,5,1,3,'',0)
 # print(Good)
-
-class PreProcessing:
+# from tqdm import tqdm
+class PrePro:
 	def __init__(self,start,end,min,max):
 		self.start = start
 		self.end = end
@@ -47,15 +47,14 @@ class PreProcessing:
 			temp = self.Prunedstr[i]
 			temp = temp[1:]
 			templst = [int(x) for x in temp.split(',')]
-			if templst not in self.Prunedlst:
-				self.Prunedlst.append(templst)
+			self.Prunedlst.append(templst) #These are by definition all unique 
 
 	def Prune(self):
 		self.GenBranchs(self.start,self.end,self.min,self.max,'')
 		self.Makelists()
 		return(self.Prunedlst)
 
-A  = PreProcessing(0, 100, 15, 45)
+A  = PrePro(0, 100, 15, 30)
 Llll = A.Prune()
 print(len(Llll))
 
