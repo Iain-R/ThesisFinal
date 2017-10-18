@@ -6,7 +6,7 @@ from MIPBlock import Block
 from StripCost import Strip
 import numpy as np 
 import gurobipy as G
-Drag = Dragline(15, 30, 45, 10, 10, 30)
+Drag = Dragline(15, 30, 45, 10, 1, 7)
 
 
 

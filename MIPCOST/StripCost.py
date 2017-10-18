@@ -18,9 +18,12 @@ class Strip:
 		print("Resource Constrained Dynamic Program \t Called:\t",self.count,'  times')
 		print("Distance Remainging  :\t" ,end-position)
 		if position>end-self.Dragline.get_minBlock():
+			position = end
+			# print("FUCK")
 			return (10000000000000000000000000,0,[])
 
 		if position == end:
+			# print(value, sep, end, file, flush)
 			return (0,0,[])
 		# if end <= position:
 			# self.dict[position,end,str(spoil)] = 100000000
